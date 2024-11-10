@@ -11,7 +11,6 @@ export type Event = {
     { id: 3, name: "Wedding Party", date: "2025-01-15", occasionType: "Wedding" },
  ];
  
- // Simulated CRUD functions
  export const getEvents = () => Promise.resolve(mockEvents);
  
  export const addEvent = (newEvent: Event) => {

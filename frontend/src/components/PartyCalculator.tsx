@@ -6,6 +6,7 @@ export const PartyCalculator = () => {
   const wineBottles = numGuests ? Math.ceil(numGuests / 5) : 0;
   const beerCans = numGuests ? Math.ceil(numGuests * 1.5) : 0;
   const snackBags = numGuests ? Math.ceil(numGuests / 3) : 0;
+  const sodaBottles = numGuests ? Math.ceil((numGuests * 0.5) / 1.5) : 0;
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto my-6">
@@ -25,6 +26,7 @@ export const PartyCalculator = () => {
           <li>{wineBottles} bottles of wine</li>
           <li>{beerCans} cans of beer</li>
           <li>{snackBags} bags of snacks</li>
+          <li>{sodaBottles} bottles of soda</li>
         </ul>
       </div>
     </div>

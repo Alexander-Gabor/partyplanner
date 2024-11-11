@@ -35,6 +35,7 @@ public class EventService {
         event.setName(eventDetails.getName());
         event.setOccasion(eventDetails.getOccasion());
         event.setNumGuests(eventDetails.getNumGuests());
+        event.setDate(eventDetails.getDate());  // Update the date field
         return eventRepository.save(event);
     }
 

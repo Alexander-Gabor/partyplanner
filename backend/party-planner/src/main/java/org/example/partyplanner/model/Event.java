@@ -3,6 +3,8 @@ package org.example.partyplanner.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "events")
 public class Event {
@@ -16,6 +18,8 @@ public class Event {
     private String occasion;
 
     private Integer numGuests;
+
+    private LocalDate date;
 
     public Long getId() {
         return id;
@@ -47,5 +51,13 @@ public class Event {
 
     public void setNumGuests(Integer numGuests) {
         this.numGuests = numGuests;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }

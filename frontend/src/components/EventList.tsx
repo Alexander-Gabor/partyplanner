@@ -1,13 +1,12 @@
-import { useState } from "react";
-import { mockEvents, Event } from "../data/mockData";
+import { Event } from "../data/mockData";
 
-const EventList = ({ onEdit }: { onEdit: (event: Event) => void }) => {
-  const [events, setEvents] = useState<Event[]>(mockEvents);
+type EventListProps = {
+  events: Event[];
+  onEdit: (event: Event) => void;
+  onDelete: (id: number) => void;
+};
 
-  const handleDelete = (id: number) => {
-    setEvents(events.filter((event) => event.id !== id));
-  };
-
+const EventList = ({ events, onEdit, onDelete }: EventListProps) => {
   return (
     <div className="p-4">
       <h2 className="text-2xl font-semibold text-center mb-4">Events</h2>
@@ -19,8 +18,10 @@ const EventList = ({ onEdit }: { onEdit: (event: Event) => void }) => {
           >
             <div>
               <p className="text-lg font-bold">{event.name}</p>
-              <p className="text-gray-600">{event.date}</p>
-              <p className="text-gray-500">{event.occasionType}</p>
+              <p className="text-gray-600">{event.occasion}</p>
+              <p className="text-gray-500">{event.numGuests} Guests</p>
+              <p className="text-gray-400">{event.date}</p>{" "}
+              {/* Display date here */}
             </div>
             <div className="flex space-x-2">
               <button
@@ -30,7 +31,7 @@ const EventList = ({ onEdit }: { onEdit: (event: Event) => void }) => {
                 Edit
               </button>
               <button
-                onClick={() => handleDelete(event.id)}
+                onClick={() => onDelete(event.id)}
                 className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
               >
                 Delete

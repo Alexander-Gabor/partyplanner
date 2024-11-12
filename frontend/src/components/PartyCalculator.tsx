@@ -20,7 +20,7 @@ export const PartyCalculator = () => {
         className="w-full mb-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Number of Guests"
       />
-      <div className="text-lg">
+      <div className="text-lg text-left">
         <p className="font-medium">You'll need:</p>
         <ul className="list-disc list-inside">
           <li>{wineBottles} bottles of wine</li>

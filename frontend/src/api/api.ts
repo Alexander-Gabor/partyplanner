@@ -2,7 +2,7 @@ import axios from "axios";
 import { Event } from "../data/mockData";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api",
+  baseURL: import.meta.env.VITE_PATH,
 });
 
 export const fetchEvents = async () => {
